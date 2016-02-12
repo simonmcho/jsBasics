@@ -1,11 +1,4 @@
-<!DOCTYPE html>
 
-<html lang="en">
-<head>
-	<title>Chapter 5, Example 8</title>
-</head>
-<body>
-	<script>
 		function Person() {
 			var _firstName;
 			var _lastName;
@@ -41,6 +34,3 @@
 		var userName = Person.create(userFirstCapped, userLastCapped);
 
 		janeDoe.greet(userName);
-	</script>
-</body>
-</html>
