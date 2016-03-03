@@ -1,0 +1,25 @@
+//Write a function which takes a ROT13 encoded string as input and returns a decoded string.
+//Additional bonus to make the first letter of each word uppercase and the rest lower case
+
+function rot13(str) {
+  var ciphered = [];
+  for (var i in str) {
+    if (str.charCodeAt(i) < 65 || str.charCodeAt(i) > 90) {
+      ciphered.push(str[i]);
+    }
+    else if (str.charCodeAt(i) < 78) {
+      ciphered.push(String.fromCharCode(str.charCodeAt(i) + 13));
+    }
+    else {
+      ciphered.push(String.fromCharCode(str.charCodeAt(i) - 13));
+    }
+  }
+  ciphered = ciphered.join("").split(" ");
+  for (var j in ciphered) {
+    ciphered[j] = ciphered[j].charAt(0) + ciphered[j].substr(1).toLowerCase();
+  }
+  return ciphered.join(" ");
+}
+
+
+rot13("SERR PBQR PNZC");
