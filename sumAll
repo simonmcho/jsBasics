@@ -1,0 +1,15 @@
+//We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them. Lowest number does not always come first
+
+function sumAll(arr) {
+  var lowest = Math.min(arr[0], arr[1]);
+  var highest = Math.max(arr[0], arr[1]);
+  var total = 0;
+  
+  for (var i = lowest; i <= highest; i++) {
+    total += i;
+  }
+  
+  return total;
+}
+
+sumAll([1, 10]);
