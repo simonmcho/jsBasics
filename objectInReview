@@ -1,3 +1,5 @@
+//The following is a simple review of objects
+
 var james = {
     job: "programmer", 
     married: false,
@@ -33,5 +35,22 @@ console.log(gabby.phone);
 for (var i in james) {
   console.log(i + ": " + james[i]);
   }
+
+//The next is a review of Classes
+
+function Person(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+}
+
+var printPersonName = function (thatPerson) {
+    console.log(thatPerson.firstName + " " + thatPerson.lastName);
+}
+
+Person.prototype
+
+var ben = new Person("Ben", "Smith", 23);
+printPersonName(ben); //This outputs 'Ben Smith'
 
 
