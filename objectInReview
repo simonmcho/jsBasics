@@ -1,0 +1,37 @@
+var james = {
+    job: "programmer", 
+    married: false,
+    phone: 604 931 9999,
+    address: 123 fake street
+};
+
+var gabby = new Person("student", true);
+
+function Person(job, married) {
+    this.job = job;
+    this.married = married;
+    this.speak = function(typeInSomething) {
+    console.log(typeInSomething);
+    }
+    this.sayJob = function() {
+    console.log("Hi, I work as a " + this.job);
+    }
+}
+
+console.log(gabby);
+gabby.speak("Hi");
+console.log( gabby.hasOwnProperty('job') + gabby.hasOwnProperty('phone'));
+
+if (gabby.hasOwnProperty('phone')) {
+console.log(gabby.phone);
+}
+else {
+gabby['phone'] = "604 939 1234";
+console.log(gabby.phone);
+}
+
+for (var i in james) {
+  console.log(i + ": " + james[i]);
+  }
+
+
