@@ -1,6 +1,11 @@
 /*
-Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both.
-In other words, return the symmetric difference of the two arrays.
+Compare two arrays and return a new array with any items only found in
+one of the two given arrays, but not both.  In other words, return the
+symmetric difference of the two arrays.
+
+NOTE:  Array.prototype.indexOf might be an interator function.  If so,
+       we'd be experiencing O(n)^2 if we try to filter through 2
+       arrays with completely unique elements
 */
 
 var test = require('tape');
@@ -25,10 +30,11 @@ function diff(arr1, arr2) {
     }, [])
 }
 
-
-// #########
-// # TESTS #
-// #########
+/*
+  #########
+  # TESTS #
+  #########
+*/
 
 var array1 = [1, 2, 3]
 var array2 = [4, 5, 1]
