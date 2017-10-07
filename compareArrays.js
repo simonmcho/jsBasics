@@ -6,29 +6,22 @@ In other words, return the symmetric difference of the two arrays.
 var test = require('tape');
 
 function diff(arr1, arr2) {
-  var uniqueItemsStore = {
-  }
-
   var uniqueItemMap = arr1.concat(arr2)
     .reduce(function(store, item) {
-      if(store[item] === undefined){
-        store[item] = true
-      } else {
-        store[item] = false
+      store[item] = (store[item] === undefined) ? true : false
+
+      return store
+    }, {})
+
+  return Object.keys(uniqueItemMap)
+    .reduce(function(store, item) {
+      if(uniqueItemMap[item]){
+        store.push(parseInt(item))
+
+        return store
       }
 
       return store
-    }, uniqueItemsStore)
-
-  return  Object.keys(uniqueItemMap)
-    .reduce(function(uniqueItemsResult, item) {
-      if(uniqueItemMap[item]){
-        uniqueItemsResult.push(parseInt(item))
-
-        return uniqueItemsResult
-      }
-
-      return uniqueItemsResult
     }, [])
 }
 
