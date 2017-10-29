@@ -4,7 +4,8 @@ The purpose for this repository is to show JavaScript concepts and for me to pra
 
 ## How to get started:
 - Install npm
-- run any of the .js files using `node <file_name_here>.js`  
+- run any of the .js files that have console.log in the program using `node <file_name_here>.js`  
+**js files that don't have console.log in the program will be updated by the end of this year**
   
 ### Status: WIP
 To Do:  
