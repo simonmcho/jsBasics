@@ -1,0 +1,57 @@
+<html>
+    <head>
+            <!-- 
+            //Event Delegation
+            //JavaScript event listeners fire not only on a single DOM element, but on all its descendants
+            
+            // Event bubbling - events on an element bubble up and fire on all its parents -->
+    </head>
+    <body>
+        <h3>
+            Event Delegation
+        </h3>
+        <h4>
+            Allows to avoid adding event listeners to specific nodes manually.
+        </h4>
+        <div>
+            Click me!
+            <p>Child Paragraph</p>
+        </div>
+
+        <ul>
+            <li>Almost all events bubble up, and this is the default for `addEventListener`</li>
+        </ul>
+
+        <button class='button'>BUTTON!</button>
+        
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+        (function() {
+            $('.button').on('click', (e) => {
+                alert($('.button').text());
+            });
+        })();
+
+        document.onload = function() {
+        
+            let divOne = document.getElementsByTagName('div')[0];//generally you don't want to hardcode like this, but we have one div so that's ok
+
+            divOne.addEventListener('click', (e) => {
+               // alert(this);//this will show object window, because bubbling traverses the listening event all the way to the top
+                alert("Using e.target will show the element that has been clicked: " + e.target.innerText);//will show whichever is clicked
+                alert("using e.currentTarget will show the element to which the event handler is attached: " + e.currentTarget);//will always show the div element
+            }, false);
+
+            
+
+            /*
+            The above shows the usefulness of event delegation, as we can dynamically manipulate DOM elements and handle events without manually adding these events.
+            */
+
+        }();
+
+        
+    </script>
+    </body>
+</html>

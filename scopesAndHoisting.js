@@ -95,3 +95,23 @@ function useStrictProper() {
 useStrictProper();
 //note foo = "bar" will work if `var foo` exists in the global namespace
 
+
+console.log("-----------------------------------------");
+console.log("Higher Order Functions");
+console.log("-----------------------------------------");
+var sum = 0;
+var arr1 = [1, 2, 3, 4, 5];
+
+console.log("The following uses a forEach method, which can be used on an array data structure");
+arr1.forEach( (number) => {
+    var result = 0;
+    result += number;
+});
+
+console.log("Functions that operate on other functions (taking them as arguments or returning them) are called higher-order functions");
+//Functions are regular values
+//higher order functions allow us to abstract over actions, not just values.
+
+
+
+
